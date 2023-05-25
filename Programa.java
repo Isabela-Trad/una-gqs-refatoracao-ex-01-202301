@@ -6,15 +6,23 @@ class Programa {
 
     System.out.println("\tRelatório Auxiliar de Controle de Infecções");
 
-    pessoa.coletaNome(sc);
-    pessoa.coletaIdade(sc);
+    Pessoa pessoa = coletarDadosPessoa(scanner);
 
-    erroTentativas = mensagem.realizaPerguntaVacinaEmDia(pesssoa);
+    boolean erroTentativas = Mensagem.realizaPerguntaVacinaEmDia(pessoa);
 
-    validacao.validacaoDasProximasPerguntas(pessoas);
+    Validacao.validarProximasPerguntas(pessoa);
 
-    validacao.calcularValidacaoFinal(erroTentativass);
+    Validacao.calcularValidacaoFinal(erroTentativas);
 
     scanner.close();
+}
+
+private static Pessoa coletarDadosPessoa(Scanner scanner) {
+    Pessoa pessoa = new Pessoa();
+
+    pessoa.coletaNome(scanner);
+    pessoa.coletaIdade(scanner);
+
+    return pessoa;
   }
 }
