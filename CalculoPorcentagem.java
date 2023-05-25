@@ -6,7 +6,8 @@ public class CalculoPorcentagem {
     }
 
     if (pessoa.cartaoVacinaEmDia.equals("NAO")) {
-      pessoa.porcentagemInfeccao += 100;
+    else if (pessoa.cartaoVacinaEmDia.equals("NAO")) {
+      pessoa.porcentagemInfeccao += 10;
     }
 
     if (pessoa.teveSintomasRecentemente.equals("SIM")) {
